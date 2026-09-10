@@ -1,0 +1,44 @@
+[draft]
+other = "草稿"
+
+[readmore]
+other = "阅读全文 ⟶"
+
+[empty]
+other = "文章正在准备中，欢迎以后再来。"
+
+[tagged]
+other = "标签："
+
+[archive]
+other = "文章归档"
+
+[tags]
+other = "全部标签"
+
+[published]
+other = "发布于"
+
+[toc]
+other = "目录"
+
+[home]
+other = "首页"
+
+[search]
+other = "搜索文章"
+
+[placeholder]
+other = "输入标题、标签或正文关键词"
+
+[loading]
+other = "正在加载…"
+
+[nojs]
+other = "请启用 JavaScript 后使用搜索。"
+
+[prev]
+other = "上一页"
+
+[next]
+other = "下一页"

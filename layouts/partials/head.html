@@ -33,16 +33,23 @@
 {{- end -}}
 
 <header>
-	<div class="main">
-		<a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
-	</div>
-	<nav>
-		{{ range .Site.Menus.main }}
-		<a href="{{ .URL | relURL }}">{{ .Name }}</a>
-		{{ end }}
-		{{ if eq .Site.Params.mode "toggle" -}}
-		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button">{{template "feathericon" (dict "UseCDN" .Site.Params.useCDN "Icon" "sun") }}</button>
-		<script src="{{ absURL "js/themetoggle.js" }}"></script>
-		{{ end }}
-	</nav>
+  <div class="main"><a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></div>
+  <div class="header-right">
+    <nav aria-label="{{ if eq .Language.Lang "en" }}Main navigation{{ else }}主导航{{ end }}">
+      {{ range .Site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+    </nav>
+    <div class="site-controls">
+      {{ $page := . }}
+      {{ range hugo.Sites }}
+        {{ if ne .Language.Lang $page.Language.Lang }}
+          {{ $target := .Home.RelPermalink }}
+          {{ $lang := .Language.Lang }}
+          {{ range $page.Translations }}{{ if eq .Language.Lang $lang }}{{ $target = .RelPermalink }}{{ end }}{{ end }}
+          <a class="language-switch" href="{{ $target }}" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}">{{ .Language.Label }}</a>
+        {{ end }}
+      {{ end }}
+      <button id="dark-mode-toggle" class="theme-switch" type="button" aria-pressed="false">{{ if eq .Language.Lang "en" }}Dark{{ else }}暗色{{ end }}</button>
+    </div>
+  </div>
 </header>
+<script src="{{ "js/themetoggle.js" | relURL }}"></script>

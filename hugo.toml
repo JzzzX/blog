@@ -1,32 +1,72 @@
 baseURL = 'https://jzzzx.github.io/blog/'
 locale = 'zh-CN'
 defaultContentLanguage = 'zh'
-title = 'JzzzX 的博客'
+title = 'Guinsoo的博客'
 theme = 'archie'
 hasCJKLanguage = true
 enableRobotsTXT = true
 [pagination]
 pagerSize = 10
 [params]
-mode = 'auto'
+mode = 'toggle'
 useCDN = false
 subtitle = '文章与思考'
-description = 'JzzzX 的个人博客，记录文章与思考。'
+description = 'Guinsoo 的个人博客，记录文章与思考。'
 mainSections = ['posts']
 customCSS = ['css/reading.css']
-[[menus.main]]
+
+[languages.zh]
+label = '中文'
+locale = 'zh-CN'
+weight = 1
+contentDir = 'content'
+title = 'Guinsoo的博客'
+[languages.en]
+label = 'English'
+locale = 'en-US'
+weight = 2
+contentDir = 'content.en'
+title = "Guinsoo's Blog"
+[languages.en.params]
+subtitle = 'Writing & reflections'
+description = "Guinsoo's personal blog. Writing and reflections."
+
+[[languages.zh.menus.main]]
 name = '首页'
-url = '/'
+pageRef = '/'
 weight = 10
-[[menus.main]]
+
+[[languages.zh.menus.main]]
 name = '归档'
-url = '/posts/'
+pageRef = '/posts/'
 weight = 20
-[[menus.main]]
+
+[[languages.zh.menus.main]]
 name = '标签'
-url = '/tags/'
+pageRef = '/tags/'
 weight = 30
-[[menus.main]]
+
+[[languages.zh.menus.main]]
 name = '搜索'
-url = '/search/'
+pageRef = '/search/'
+weight = 40
+
+[[languages.en.menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[languages.en.menus.main]]
+name = 'Archive'
+pageRef = '/posts/'
+weight = 20
+
+[[languages.en.menus.main]]
+name = 'Tags'
+pageRef = '/tags/'
+weight = 30
+
+[[languages.en.menus.main]]
+name = 'Search'
+pageRef = '/search/'
 weight = 40

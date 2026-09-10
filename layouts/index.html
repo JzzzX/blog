@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{{ .Site.Language.Locale }}">
 	{{ partial "header.html" . }}
 	<body>
 		<div class="content">
@@ -16,11 +16,11 @@
 				{{ range $paginator.Pages }}
 				<section class="list-item">
 					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
-					<time>{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">草稿</span> {{ end }}</time>
+					<time>{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">{{ i18n "draft" }}</span> {{ end }}</time>
 					<br>{{ template "partials/pagedescription.html" . }}
-					<a class="readmore" href="{{ .RelPermalink }}">阅读全文 ⟶</a>
+					<a class="readmore" href="{{ .RelPermalink }}">{{ i18n "readmore" }}</a>
 				</section>
-				{{ else }}<p class="empty-state">文章正在准备中，欢迎以后再来。</p>{{ end }}
+				{{ else }}<p class="empty-state">{{ i18n "empty" }}</p>{{ end }}
 				{{ template "partials/paginator.html" . }}
 			</main>
 			{{ partial "footer.html" . }}

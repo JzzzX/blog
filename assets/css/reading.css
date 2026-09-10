@@ -36,8 +36,16 @@ pre { font-size: 14px; line-height: 1.7; }
 footer { font-size: 12px; margin-top: 64px; }
 .posts .post { margin-block: 18px; }
 .posts .meta { display: block; margin-top: 6px; }
-@media (prefers-color-scheme: dark) {
-  :root { --color-text-meta: #b7b7bd; --color-text-muted: #b7b7bd; }
+:root[data-theme='dark'] { --color-text-meta: #b7b7bd; --color-text-muted: #b7b7bd; color-scheme: dark; }
+:root[data-theme='light'] { color-scheme: light; }
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+.site-controls { display: flex; align-items: center; gap: 16px; font-size: 14px; line-height: 1.5; }
+.theme-switch { font: inherit; color: inherit; background: transparent; border: 1px dashed currentColor; padding: 5px 10px; cursor: pointer; }
+.theme-switch:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+header { align-items: flex-start; }
+@media (max-width: 600px) {
+  .header-right { width: 100%; align-items: flex-end; }
+  .header-right nav { align-self: flex-start; }
 }
 @media (max-width: 600px) {
   .content { padding: 16px 22px 0; }

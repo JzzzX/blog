@@ -1,9 +1,9 @@
-# JzzzX 的博客
+# Guinsoo的博客
 
 线上地址：https://jzzzx.github.io/blog/
 仓库：https://github.com/JzzzX/blog
 
-Hugo 0.166.0 + Archie。中文导航；桌面正文 18px、手机 17px，行距 1.9。跟随系统切换深浅色。无评论、统计或第三方字体请求。
+Hugo 0.166.0 + Archie。中文导航；桌面正文 18px、手机 17px，行距 1.9。支持中英文界面；默认跟随系统深浅色，右上角可手动切换并记住选择。无评论、统计或第三方字体请求。
 
 ## 写文章
 
@@ -40,3 +40,5 @@ hugo --minify
 ```
 
 public 为构建输出，不提交。content/posts/preview.md 是公开可见的通用排版样稿，仅在本地 `hugo server -D` 时进入网站。
+
+英文文章放在 content.en/posts/，使用与中文相同的文件名即可关联翻译。语言切换优先跳转对应译文，无译文时进入该语言首页。

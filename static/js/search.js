@@ -1,4 +1,5 @@
 (function () {
+    var english = document.documentElement.lang.startsWith("en");
     var root = document.querySelector("[data-search-root]");
 
     if (!root) {
@@ -168,16 +169,16 @@
         results.replaceChildren();
 
         if (!tokens.length) {
-            renderEmptyState("输入关键词，查找文章。", "search-status-empty");
+            renderEmptyState((english ? "Type a keyword to search." : "输入关键词，查找文章。"), "search-status-empty");
             return;
         }
 
         if (!entries.length) {
-            renderEmptyState("没有找到相关内容。", "search-status-empty");
+            renderEmptyState((english ? "No matching articles." : "没有找到相关内容。"), "search-status-empty");
             return;
         }
 
-        status.textContent = "找到 " + entries.length + " 篇相关内容";
+        status.textContent = english ? entries.length + " matching articles" : "找到 " + entries.length + " 篇相关内容";
         status.className = "search-status";
 
         entries.forEach(function (entry) {
@@ -359,6 +360,6 @@
             bootstrap(Array.isArray(entries) ? entries : []);
         })
         .catch(function () {
-            renderEmptyState("搜索暂时无法加载，请刷新重试。", "search-status-error");
+            renderEmptyState((english ? "Search could not load. Please refresh." : "搜索暂时无法加载，请刷新重试。"), "search-status-error");
         });
 }());

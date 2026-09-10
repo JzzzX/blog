@@ -1,0 +1,44 @@
+[draft]
+other = "Draft"
+
+[readmore]
+other = "Read more ⟶"
+
+[empty]
+other = "Articles are on the way. Come back soon."
+
+[tagged]
+other = "Tagged: "
+
+[archive]
+other = "Archive"
+
+[tags]
+other = "All tags"
+
+[published]
+other = "Published on"
+
+[toc]
+other = "Contents"
+
+[home]
+other = "Home"
+
+[search]
+other = "Search articles"
+
+[placeholder]
+other = "Search titles, tags, or content"
+
+[loading]
+other = "Loading…"
+
+[nojs]
+other = "Enable JavaScript to use search."
+
+[prev]
+other = "Previous"
+
+[next]
+other = "Next"
