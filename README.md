@@ -27,7 +27,7 @@ GitHub Actions 自动构建和发布。进度见仓库 Actions 页面。
 
 - 名称、简介、导航：hugo.toml。
 - 中文字号、行距、页面宽度：assets/css/reading.css。
-- 中文界面模板：layouts/；搜索提示：static/js/search.js。
+- 中文界面模板：layouts/；搜索提示：assets/js/search.js。
 - 上游主题：themes/archie，固定为 Git 子模块。自定义修改不直接改上游。
 
 ## 构建和恢复

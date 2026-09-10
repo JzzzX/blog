@@ -52,4 +52,5 @@
     </div>
   </div>
 </header>
-<script src="{{ "js/themetoggle.js" | relURL }}"></script>
+{{ $toggle := resources.Get "js/themetoggle.js" | fingerprint }}
+<script src="{{ $toggle.RelPermalink }}"></script>
